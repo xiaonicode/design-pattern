@@ -8,23 +8,14 @@ import java.io.InputStreamReader;
 
 /**
  * @author: xiaonicode
- * @createTime: 2022/9/12 20:42
- * @description: 订购披萨 (使用简单工厂模式, 普通成员方法)
+ * @createTime: 2022/9/13 0:00
+ * @description: 订购披萨 (使用简单工厂模式, 静态方法)
  */
 public class OrderPizza2 {
 
-    /** 定义一个简单工厂对象 */
-    private SimpleFactory factory;
-
-    public OrderPizza2(SimpleFactory factory) {
-        setFactory(factory);
-    }
-
-    private void setFactory(SimpleFactory factory) {
-        this.factory = factory;
-
+    public OrderPizza2() {
         do {
-            BasePizza pizza = factory.createPizza1(getOrderType());
+            BasePizza pizza = SimpleFactory.createPizza2(getOrderType());
             if (null != pizza) {
                 pizza.prepare();
                 pizza.bake();

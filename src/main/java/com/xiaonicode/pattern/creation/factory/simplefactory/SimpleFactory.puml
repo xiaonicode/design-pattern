@@ -16,10 +16,10 @@ BasePizza <|-- CheesePizza
 class GreekPizza {}
 BasePizza <|-- GreekPizza
 
+class OrderPizza1 {}
 class OrderPizza2 {}
-class OrderPizza3 {}
 
 class SimpleFactory {}
-OrderPizza2 o-- SimpleFactory
-OrderPizza3 ..> SimpleFactory
+OrderPizza1 o-- SimpleFactory
+OrderPizza2 ..> SimpleFactory
 @enduml

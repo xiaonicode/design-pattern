@@ -1,6 +1,6 @@
 package com.xiaonicode.pattern.creation.factory.simplefactory.pizzastore;
 
-import com.xiaonicode.pattern.creation.factory.simplefactory.pizzastore.order.OrderPizza3;
+import com.xiaonicode.pattern.creation.factory.simplefactory.pizzastore.order.OrderPizza2;
 
 /**
  * @author: xiaonicode
@@ -10,14 +10,11 @@ import com.xiaonicode.pattern.creation.factory.simplefactory.pizzastore.order.Or
 public class PizzaStore {
 
     public static void main(String[] args) {
-        // 使用传统方式
-        // new OrderPizza1();
-
         // 使用简单工厂模式
-        // new OrderPizza2(new SimpleFactory());
+        // new OrderPizza1(new SimpleFactory());
 
         // 使用静态工厂模式
-        new OrderPizza3();
+        new OrderPizza2();
     }
 
 }
