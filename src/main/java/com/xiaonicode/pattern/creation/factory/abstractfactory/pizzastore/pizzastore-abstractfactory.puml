@@ -1,0 +1,43 @@
+@startuml
+left to right direction
+
+abstract class BasePizza {
+    #String name
+    +void setName(String name)
+    +{abstract} void prepare()
+    +void bake()
+    +void cut()
+    +void box()
+}
+
+class BeijingCheesePizza {}
+class BeijingPepperPizza {}
+class LondonCheesePizza {}
+class LondonPepperPizza {}
+
+BasePizza <|-- BeijingCheesePizza
+BasePizza <|-- BeijingPepperPizza
+BasePizza <|-- LondonCheesePizza
+BasePizza <|-- LondonPepperPizza
+
+interface BaseFactory {
+    +void createPizza()
+}
+
+class BeijingFactory {}
+BeijingFactory ..> BeijingCheesePizza
+BeijingFactory ..> BeijingPepperPizza
+
+class LondonFactory {}
+LondonFactory ..> LondonCheesePizza
+LondonFactory ..> LondonPepperPizza
+
+BeijingFactory ..|> BaseFactory
+LondonFactory ..|> BaseFactory
+
+class OrderPizza1 {}
+OrderPizza1 o-- BaseFactory
+
+class OrderPizza2 {}
+OrderPizza2 o-- BaseFactory
+@enduml

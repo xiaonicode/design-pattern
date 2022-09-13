@@ -1,0 +1,25 @@
+@startuml
+left to right direction
+
+abstract class BasePizza {
+    #String name
+    +void setName(String name)
+    +{abstract} void prepare()
+    +void bake()
+    +void cut()
+    +void box()
+}
+
+class CheesePizza {}
+BasePizza <|-- CheesePizza
+
+class GreekPizza {}
+BasePizza <|-- GreekPizza
+
+class OrderPizza2 {}
+class OrderPizza3 {}
+
+class SimpleFactory {}
+OrderPizza2 o-- SimpleFactory
+OrderPizza3 ..> SimpleFactory
+@enduml
