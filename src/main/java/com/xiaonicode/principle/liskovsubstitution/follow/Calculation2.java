@@ -10,10 +10,7 @@ public class Calculation2 extends BaseCalculation {
     /** 如果 Calculation2 类中需要使用 Calculation1 类的方法, 就使用组合关系 */
     private final Calculation1 c1 = new Calculation1();
 
-    /**
-     * 无意间重写了 Calculation1 中的 func1 方法, 计算两数之和,<br/>
-     * 使得原本计算两书之差的功能消失, 违反了里氏替换原则.
-     */
+    /** 计算两数之和 */
     public int func1(int a, int b) {
         return a + b;
     }
