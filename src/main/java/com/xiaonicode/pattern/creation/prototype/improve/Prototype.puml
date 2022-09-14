@@ -1,0 +1,32 @@
+@startuml
+class Prototype {
+    +clone()
+}
+
+note top of Prototype
+原型类, 声明一个克隆自己的接口
+end note
+
+class ConcretePrototype1 {
+    +clone()
+}
+
+note bottom of ConcretePrototype1
+具体的原型类, 实现一个克隆自己的类
+end note
+
+class ConcretePrototype2 {
+    +clone()
+}
+
+Prototype <|-- ConcretePrototype1
+Prototype <|-- ConcretePrototype2
+
+class Client {}
+
+note top of Client
+让一个原型对象克隆自己, 从而创建一个新的对象 (属性一样)
+end note
+
+Client .left.> Prototype
+@enduml
